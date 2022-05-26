@@ -4,8 +4,9 @@ import json
 
 bigquery_credentials = os.environ.get('BIGQUERY_CREDS')
 directory_of_file = os.path.dirname(os.path.realpath(__file__))
-#dbt_command = os.environ.get('DBT_COMMAND', 'dbt run')
-print(${dbt_command})
+dbt_command = os.environ.get('dbt_command', 'dbt run')
+print(dbt_command)
+
 
 os.chdir(directory_of_file)
 if not bigquery_credentials or not bigquery_credentials == 'None':
